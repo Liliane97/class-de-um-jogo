@@ -8,20 +8,13 @@ class Heroi {
 
     atacar() {
 
-        let ataque
+        const ataques = { mago: "magia", guerreiro: "espada", monge: "arte marciais", ninja: "shuriken" }
 
-        if (this.tipo === "mago") {
-            ataque = "magia"
-        } else if (this.tipo === "guerreiro") {
-            ataque = "espada"
-        } else if (this.tipo === "monge") {
-            ataque = "artes marciais"
-        } else if (this.tipo === "ninja") {
-            ataque = "shuriken"
+        if (!ataques[this.tipo]) {
+            console.log(`Ops o herói ${this.tipo} atacou usando um ataque desconhecido!!!`);
+        } else {
+            console.log(`O ${this.tipo} atacou usando ${ataques[this.tipo]}.`)
         }
-
-        console.log(`O ${this.tipo} atacou usando ${ataque}`)
-
     }
 }
 
